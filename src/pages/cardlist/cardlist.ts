@@ -9,6 +9,8 @@ import { RssFeed } from '../../providers/rssfeed';
 export class CardListPage {
   public cards = [];
 
+  public alert = (url) => window.open(url);
+
   constructor(public navCtrl: NavController, public rssParser: RssFeed) {
     rssParser.feed('http://feeds.feedburner.com/varacast?format=xml')
       .then((result) => { console.log(result); this.cards = result.feed.entries; })
