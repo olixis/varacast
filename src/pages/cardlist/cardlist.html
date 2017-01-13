@@ -1,0 +1,28 @@
+  <ion-card *ngFor="let card of cards">
+
+    <ion-card-content>
+      <h2>{{card.title}}</h2>
+    </ion-card-content>
+
+
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left clear small>
+        <ion-icon name="musical-notes"></ion-icon>
+        <div> Ouvir</div>
+      </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-left clear small>
+        <ion-icon name="download"></ion-icon>
+        <div>Baixar</div>
+      </button>
+      </ion-col>
+      <ion-col center text-center>
+        <ion-note>
+          {{card.pubDate | date:'shortDate'}}
+        </ion-note>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>

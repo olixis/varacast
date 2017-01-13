@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import 'rxjs/add/operator/map';
+import * as Feed from 'rss-parser';
 
 /*
   Generated class for the Rssfeed provider.
@@ -9,10 +8,15 @@ import 'rxjs/add/operator/map';
   for more info on providers and Angular 2 DI.
 */
 @Injectable()
-export class Rssfeed {
+export class RssFeed {
 
-  constructor(public http: Http) {
-    console.log('Hello Rssfeed Provider');
+  constructor() { }
+  public feed(url: String): Promise<any> {
+    return new Promise((resolve, reject) => {
+      Feed.parseURL(url, (err, parsed) => {
+        err ? reject(err) : resolve(parsed);
+      })
+    });
   }
 
 }

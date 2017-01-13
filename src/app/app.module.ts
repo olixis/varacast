@@ -1,12 +1,15 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
-
+import { TelaprincipalPage } from '../pages/telaprincipal/telaprincipal';
+import { CardListPage } from '../pages/cardlist/cardlist';
+import { RssFeed } from '../providers/rssfeed';
+import { LOCALE_ID } from '@angular/core';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    TelaprincipalPage,
+    CardListPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -14,8 +17,9 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    TelaprincipalPage,
+    CardListPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},{ provide: LOCALE_ID, useValue: "pt-BR" },RssFeed]
 })
 export class AppModule {}
