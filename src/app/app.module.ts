@@ -3,13 +3,16 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { TelaprincipalPage } from '../pages/telaprincipal/telaprincipal';
 import { CardListPage } from '../pages/cardlist/cardlist';
+import { PlayerPage } from '../pages/player/player';
 import { RssFeed } from '../providers/rssfeed';
 import { LOCALE_ID } from '@angular/core';
 @NgModule({
   declarations: [
     MyApp,
     TelaprincipalPage,
-    CardListPage
+    CardListPage,
+    PlayerPage
+
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -18,7 +21,8 @@ import { LOCALE_ID } from '@angular/core';
   entryComponents: [
     MyApp,
     TelaprincipalPage,
-    CardListPage
+    CardListPage,
+    PlayerPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},{ provide: LOCALE_ID, useValue: "pt-BR" },RssFeed]
 })

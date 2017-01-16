@@ -15,8 +15,6 @@ export class TelaprincipalPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad TelaprincipalPage');
-  }
+
 
 }

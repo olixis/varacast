@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { RssFeed } from '../../providers/rssfeed';
+import { PlayerPage } from '../player/player';
 
 @Component({
   selector: 'cardlist',
@@ -9,12 +10,12 @@ import { RssFeed } from '../../providers/rssfeed';
 export class CardListPage {
   public cards = [];
 
-  public alert = (url) => window.open(url);
-
   constructor(public navCtrl: NavController, public rssParser: RssFeed) {
     rssParser.feed('http://feeds.feedburner.com/varacast?format=xml')
       .then((result) => { console.log(result); this.cards = result.feed.entries; })
       .catch((err) => { console.log(err); })
   }
+
+    public play = (url) => this.navCtrl.push(PlayerPage,{URL:url});
 
 }
