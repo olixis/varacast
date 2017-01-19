@@ -19,6 +19,6 @@ export class PlayerPage {
       this.mp3Link = navParams.get('URL');
   }
 
-
+  public back = (url) => this.navCtrl.pop();
 
 }

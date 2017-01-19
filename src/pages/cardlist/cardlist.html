@@ -7,9 +7,9 @@
 
     <ion-row>
       <ion-col>
-        <button ion-button icon-left clear small>
+        <button (click)="play(card.enclosure.url)" ion-button icon-left clear small>
         <ion-icon name="musical-notes"></ion-icon>
-        <div (click)="play(card.enclosure.url)"> Ouvir</div>
+        <div> Ouvir</div>
       </button>
       </ion-col>
       <ion-col>

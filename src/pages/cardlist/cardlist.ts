@@ -12,10 +12,10 @@ export class CardListPage {
 
   constructor(public navCtrl: NavController, public rssParser: RssFeed) {
     rssParser.feed('http://feeds.feedburner.com/varacast?format=xml')
-      .then((result) => { console.log(result); this.cards = result.feed.entries; })
+      .then((result) => {this.cards = result.feed.entries; })
       .catch((err) => { console.log(err); })
   }
 
-    public play = (url) => this.navCtrl.push(PlayerPage,{URL:url});
+    public play = (url) => this.navCtrl.push(PlayerPage,{URL:url},{animate:true,animation:'ios-transition'});
 
 }
